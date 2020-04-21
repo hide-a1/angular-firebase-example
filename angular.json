@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "dog-hunting"
+    }
+  },
+  "defaultProject": "dog-hunting",
+  "cli": {
+    "analytics": "8e1aa6a6-d85d-49d7-831d-4a9b31acb228"
+  }
 }
