@@ -13,6 +13,10 @@
       autocomplete="off"
       required
     />
+    <mat-error *ngIf="nameContorol.hasError('required')"
+      >必須入力です</mat-error
+    >
+    <mat-error *ngIf="nameContorol.hasError('maxlength')">長すぎます</mat-error>
     <mat-radio-group formControlName="gender">
       <mat-radio-button value="male">♂</mat-radio-button>
       <mat-radio-button value="female">♀</mat-radio-button>
