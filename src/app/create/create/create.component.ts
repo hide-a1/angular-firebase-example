@@ -13,7 +13,10 @@ export class CreateComponent implements OnInit {
   config: SwiperConfigInterface = {
     loop: true,
     navigation: true,
-    pagination: true,
+    pagination: {
+      el: '.pager',
+      clickable: true,
+    },
     centeredSlides: true,
     slidesPerView: 3,
   };
