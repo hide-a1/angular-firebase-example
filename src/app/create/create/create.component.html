@@ -1,6 +1,12 @@
 <h1>ペットをつくる</h1>
 
-<p>カルーセルはいる</p>
+<div>
+  <swiper [config]="config" [(index)]="selectedPetId">
+    <div *ngFor="let petId of petIds">
+      <img src="/assets/images/pet-{{ petId }}.png" alt="" />
+    </div>
+  </swiper>
+</div>
 
 <form [formGroup]="form" (ngSubmit)="submit()">
   <mat-form-field>
