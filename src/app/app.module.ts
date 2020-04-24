@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,6 +9,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
+import { AngularFireFunctionsModule, REGION } from '@angular/fire/functions';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,13 +17,14 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    AngularFireFunctionsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAnalyticsModule,
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireAuth,
   ],
-  providers: [],
+  providers: [{ provide: REGION, useValue: 'asia-northeast1' }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
