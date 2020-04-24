@@ -123,6 +123,10 @@
               "devServerTarget": "dog-hunting:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
