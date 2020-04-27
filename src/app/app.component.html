@@ -1,5 +1,6 @@
 <router-outlet></router-outlet>
 
 <footer>
+  <button *ngIf="user$ | async" (click)="logout()">ログアウト</button>
   <p>&copy; GitPet</p>
 </footer>
