@@ -11,6 +11,6 @@
       mode="determinate"
       [value]="getExpPercentage()"
     ></mat-progress-bar>
-    <p class="pet__exp">経験値 {{ pet.exp }} / {{ maxExp }}</p>
+    <p class="pet__exp">経験値 {{ pet | exp }}</p>
   </div>
 </div>
