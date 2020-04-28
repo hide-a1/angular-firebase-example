@@ -38,9 +38,9 @@ export class CreateComponent implements OnInit {
     private fb: FormBuilder,
     private petService: PetService,
     private authService: AuthService
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   submit() {
     const formData = this.form.value;
@@ -51,6 +51,7 @@ export class CreateComponent implements OnInit {
       level: 1,
       exp: 0,
       trainerId: this.authService.uid,
+      ownerGitHubId: this.authService.gitHubId
     });
   }
 }
