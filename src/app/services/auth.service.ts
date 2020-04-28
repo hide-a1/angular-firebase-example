@@ -10,12 +10,15 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AuthService {
   afUser$: Observable<User> = this.afAuth.user;
+  uid: string;
   constructor(
     private afAuth: AngularFireAuth,
     private router: Router,
     private snackBar: MatSnackBar
   ) {
-    this.afUser$.subscribe((user) => console.log(user));
+    this.afUser$.subscribe((user) => {
+      this.uid = user && user.uid;
+    });
   }
 
   login() {
@@ -23,6 +26,7 @@ export class AuthService {
       this.snackBar.open('ようこそGitPetへ', null, {
         duration: 2000,
       });
+      this.router.navigateByUrl('/create');
     });
   }
 
@@ -31,8 +35,8 @@ export class AuthService {
       this.snackBar.open('ログアウトしました', null, {
         duration: 2000,
       });
+      this.router.navigateByUrl('/welcome');
     });
-    this.router.navigateByUrl('/welcome');
   }
 }
 
