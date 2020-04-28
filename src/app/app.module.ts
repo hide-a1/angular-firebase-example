@@ -11,9 +11,10 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { environment } from '../environments/environment';
 import { AngularFireFunctionsModule, REGION } from '@angular/fire/functions';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
